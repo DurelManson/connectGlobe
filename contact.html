@@ -19,11 +19,14 @@
             <div class="logo">
                 <img src="images/connect globe logo v.png" alt="Connect Globe">
             </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+            <input type="checkbox" id="services-toggle" class="services-toggle-checkbox" />
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li>
-                    <a href="services.html">Services</a>
+                <li class="has-dropdown">
+                    <label for="services-toggle" class="services-link">Services</label>
+                    <a href="services.html" class="services-link-desktop">Services</a>
                     <div class="services-dropdown">
                         <a href="services.html#manpower">
                             <div class="dropdown-icon"><i class="fas fa-users"></i></div>
@@ -57,11 +60,11 @@
                 </li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <div class="mobile-toggle">
+            <label for="menu-toggle" class="mobile-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </label>
         </nav>
     </header>
 

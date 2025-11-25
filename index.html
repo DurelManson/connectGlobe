@@ -12,17 +12,22 @@
     <link rel="stylesheet" href="dark-theme.css">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header -->
     <header>
         <nav class="container">
             <div class="logo">
                 <img src="images/connect globe logo v.png" alt="Connect Globe">
             </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+            <input type="checkbox" id="services-toggle" class="services-toggle-checkbox" />
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li>
-                    <a href="services.html">Services</a>
+                <li class="has-dropdown">
+                    <label for="services-toggle" class="services-link">Services</label>
+                    <a href="services.html" class="services-link-desktop">Services</a>
                     <div class="services-dropdown">
                         <a href="services.html#manpower">
                             <div class="dropdown-icon">
@@ -64,21 +69,21 @@
                 </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="mobile-toggle">
+            <label for="menu-toggle" class="mobile-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </label>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(to right, rgba(26, 35, 68, 0.95) 0%, rgba(26, 35, 68, 0.3) 25%, rgba(26, 35, 68, 0.1) 50%, rgba(26, 35, 68, 0.3) 75%, rgba(26, 35, 68, 0.95) 100%), url('images/connect globe banner.PNG'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; box-shadow: inset 0 0 200px 100px rgba(26, 35, 68, 0.8);">
+    <main id="main-content">
+        <section class="hero" style="background: linear-gradient(to right, rgba(26, 35, 68, 0.95) 0%, rgba(26, 35, 68, 0.3) 25%, rgba(26, 35, 68, 0.1) 50%, rgba(26, 35, 68, 0.3) 75%, rgba(26, 35, 68, 0.95) 100%), url('images/connect globe banner.PNG'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; box-shadow: inset 0 0 200px 100px rgba(26, 35, 68, 0.8);">
         <div id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
                 <h1 id="typed-heading"></h1>
-                <p class="parallax-layer" data-speed="0.5">Your trusted partner in international recruitment, software development, and industrial solutions across the Middle East and beyond.</p>
                 <div class="cta-buttons">
                     <a href="services.html" class="btn btn-primary">Explore Services</a>
                     <a href="contact.html" class="btn btn-outline">Contact Us</a>
@@ -171,7 +176,7 @@
                         <span class="step-number">1</span>
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <h4>Registration</h4>
+                    <h3 class="h4">Registration</h3>
                     <p>Submit your profile and documents through our secure platform</p>
                 </div>
 
@@ -184,7 +189,7 @@
                         <span class="step-number">2</span>
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h4>Verification</h4>
+                    <h3 class="h4">Verification</h3>
                     <p>Our team reviews your credentials and validates your experience</p>
                 </div>
 
@@ -197,7 +202,7 @@
                         <span class="step-number">3</span>
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h4>Matching & Interview</h4>
+                    <h3 class="h4">Matching & Interview</h3>
                     <p>We connect you with verified employers and facilitate interviews</p>
                 </div>
 
@@ -210,7 +215,7 @@
                         <span class="step-number">4</span>
                         <i class="fas fa-plane-departure"></i>
                     </div>
-                    <h4>Placement</h4>
+                    <h3 class="h4">Placement</h3>
                     <p>Complete visa processing and begin your new career journey</p>
                 </div>
             </div>
@@ -341,6 +346,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <script src="script.js"></script>
     <script src="wow-effects.js"></script>

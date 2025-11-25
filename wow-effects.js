@@ -24,9 +24,24 @@ function typeWriter(element, text, speed = 100) {
 // Initialize typing effect on hero
 document.addEventListener('DOMContentLoaded', () => {
     const heroHeading = document.getElementById('typed-heading');
+    const aboutHeading = document.getElementById('typed-about-heading');
+    const contactHeading = document.getElementById('typed-contact-heading');
+    
     if (heroHeading) {
         setTimeout(() => {
             typeWriter(heroHeading, 'Connecting Industrial Excellence', 80);
+        }, 500);
+    }
+    
+    if (aboutHeading) {
+        setTimeout(() => {
+            typeWriter(aboutHeading, 'About Connect Globe', 80);
+        }, 500);
+    }
+    
+    if (contactHeading) {
+        setTimeout(() => {
+            typeWriter(contactHeading, 'Contact Connect Globe', 80);
         }, 500);
     }
 });
@@ -74,11 +89,19 @@ function createParticles() {
     document.head.appendChild(style);
 }
 
-// Initialize particles
-document.addEventListener('DOMContentLoaded', createParticles);
+// Initialize particles only if container exists
+document.addEventListener('DOMContentLoaded', () => {
+    const particlesContainer = document.getElementById('particles-js');
+    if (particlesContainer) {
+        createParticles();
+    }
+});
 
 // ===== PARALLAX SCROLLING =====
 window.addEventListener('scroll', () => {
+    // Désactiver le parallaxe sur mobile pour améliorer les performances
+    if (window.innerWidth <= 768) return;
+    
     const scrolled = window.pageYOffset;
 
     // Parallax for elements with data-speed attribute

@@ -22,17 +22,39 @@ body {
     color: var(--text-primary);
 }
 
-/* Header Dark Theme */
+/* Header Light Theme for Better Contrast */
 header {
-    background: rgba(26, 35, 68, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e0e0e0;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
 header.scrolled {
-    background: rgba(26, 35, 68, 0.98);
-    box-shadow: 0 4px 30px rgba(0, 147, 208, 0.3);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav links - dark text on light background (Desktop) */
+@media (min-width: 769px) {
+    .nav-links a {
+        color: var(--primary-blue) !important;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--accent-orange) !important;
+    }
+}
+
+/* Logo always visible */
+.logo {
+    color: var(--primary-blue) !important;
+}
+
+/* Menu Mobile Simple - Pas de override nécessaire */
+@media (max-width: 768px) {
+    /* Le menu mobile utilise le fond blanc par défaut du header */
 }
 
 /* Dark Section Backgrounds */
@@ -91,7 +113,7 @@ header.scrolled {
 .vm-content h3,
 .feature-card h3,
 .service-card h3 {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .section-title p,
@@ -99,7 +121,44 @@ header.scrolled {
 .vm-content p,
 .feature-card p,
 .service-card p {
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
+}
+
+/* Why Choose Us Section - Enhanced Contrast */
+.why-choose-section .feature-card {
+    background: rgba(43, 60, 109, 0.95) !important;
+    border: 1px solid rgba(0, 147, 208, 0.3) !important;
+}
+
+.why-choose-section .feature-card h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.why-choose-section .feature-card p {
+    color: #e0e7f0 !important;
+}
+
+/* Recruitment Process Section - Enhanced Contrast */
+.recruitment-process .section-title h2 {
+    color: #ffffff !important;
+}
+
+.recruitment-process .section-title p {
+    color: #e0e7f0 !important;
+}
+
+.recruitment-process .process-step h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.recruitment-process .process-step p {
+    color: #e0e7f0 !important;
+}
+
+.recruitment-process .step-number {
+    color: #ffffff !important;
 }
 
 /* Buttons - Square */

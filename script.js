@@ -1,39 +1,8 @@
 // ============================================
 // CONNECT GLOBE - JAVASCRIPT INTERACTIONS
 // ============================================
-
-// Mobile Menu Toggle
-const mobileToggle = document.querySelector('.mobile-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-
-        // Animate hamburger icon
-        const spans = mobileToggle.querySelectorAll('span');
-        if (navLinks.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-
-    // Close menu when clicking on a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const spans = mobileToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        });
-    });
-}
+// NOTE: Le menu mobile fonctionne maintenant avec CSS uniquement (CSS-only)
+// Pas besoin de JavaScript pour le menu toggle et le dropdown Services
 
 // Header Scroll Effect
 const header = document.querySelector('header');
@@ -80,26 +49,25 @@ navLinksAll.forEach(link => {
     }
 });
 
-// Counter Animation for Stats
+// Counter Animation for Stats - Optimized
 const counters = document.querySelectorAll('.stat-number');
 const speed = 200;
 
-const runCounter = (counter) => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace('+', '');
+const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText.replace('+', '');
+    const increment = target / speed;
 
-        const inc = target / speed;
+    if (count < target) {
+        counter.innerText = Math.ceil(count + increment) + '+';
+        setTimeout(() => animateCounter(counter), 1);
+    } else {
+        counter.innerText = target + '+';
+    }
+};
 
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc) + '+';
-            setTimeout(updateCount, 1);
-        } else {
-            counter.innerText = target + '+';
-        }
-    };
-
-    updateCount();
+const runCounter = () => {
+    counters.forEach(animateCounter);
 };
 
 // Intersection Observer for Stats
@@ -110,11 +78,11 @@ if (statsSection) {
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !statsAnimated) {
-                counters.forEach(counter => runCounter(counter));
+                runCounter();
                 statsAnimated = true;
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
 
     statsObserver.observe(statsSection);
 }
