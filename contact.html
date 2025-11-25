@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Connect Globe - Get in touch for recruitment, software development, and industrial services across the Middle East and international markets.">
+    <meta name="keywords" content="contact connect globe, recruitment inquiry, manpower services contact, business inquiry">
+    <title>Contact Us | Connect Globe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homepage-styles.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <link rel="stylesheet" href="contact-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/connect globe logo v.png" alt="Connect Globe">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li>
+                    <a href="services.html">Services</a>
+                    <div class="services-dropdown">
+                        <a href="services.html#manpower">
+                            <div class="dropdown-icon"><i class="fas fa-users"></i></div>
+                            <div class="dropdown-text">
+                                <h4>Manpower Consultancy</h4>
+                                <p>International recruitment solutions</p>
+                            </div>
+                        </a>
+                        <a href="services.html#import-export">
+                            <div class="dropdown-icon"><i class="fas fa-shipping-fast"></i></div>
+                            <div class="dropdown-text">
+                                <h4>Industrial Import & Export</h4>
+                                <p>Global trade solutions</p>
+                            </div>
+                        </a>
+                        <a href="services.html#digital">
+                            <div class="dropdown-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="dropdown-text">
+                                <h4>Digital Marketing & Software</h4>
+                                <p>Custom digital solutions</p>
+                            </div>
+                        </a>
+                        <a href="services.html#events">
+                            <div class="dropdown-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="dropdown-text">
+                                <h4>Event Management</h4>
+                                <p>Professional event solutions</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Banner -->
+    <section class="contact-banner" style="background: linear-gradient(to right, rgba(26, 35, 68, 0.95) 0%, rgba(26, 35, 68, 0.3) 25%, rgba(26, 35, 68, 0.1) 50%, rgba(26, 35, 68, 0.3) 75%, rgba(26, 35, 68, 0.95) 100%), url('images/banner-contactpage.PNG'); background-size: cover; background-position: center 35%; background-repeat: no-repeat; background-attachment: fixed; box-shadow: inset 0 0 200px 100px rgba(26, 35, 68, 0.8);">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="banner-content reveal">
+                <h1 id="typed-contact-heading"></h1>
+                <p class="parallax-layer" data-speed="0.5">Have questions? Need recruitment support? Looking to partner with us? We're here to help you every step of the way</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information & Form -->
+    <section class="contact-main-section bg-dark-gradient">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Let's Connect</h2>
+                <p>Choose how you'd like to reach us</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information Cards -->
+                <div class="contact-info-cards">
+                    <div class="contact-info-card reveal">
+                        <div class="contact-icon-large">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>
+                            No: 7/474-B, Telecom Avenue<br>
+                            Saravanampatti<br>
+                            Coimbatore, TN, India - 641035
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card reveal">
+                        <div class="contact-icon-large">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Phone Numbers</h3>
+                        <p>
+                            Saudi Arabia: <a href="tel:+966533488004">+966-53348-8004</a><br>
+                            India: <a href="tel:+919994045527">+91-99940-45527</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card reveal">
+                        <div class="contact-icon-large">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Addresses</h3>
+                        <p>
+                            General: <a href="mailto:hr@connectglobe.info">hr@connectglobe.info</a><br>
+                            Support: <a href="mailto:support@connectglobe.info">support@connectglobe.info</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card reveal">
+                        <div class="contact-icon-large">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <p>
+                            Monday - Friday: 9:00 AM - 6:00 PM IST<br>
+                            Saturday: 9:00 AM - 1:00 PM IST<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper reveal">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+91 99999 99999">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="recruitment">Recruitment Services</option>
+                                    <option value="job-seeker">Job Seeker Inquiry</option>
+                                    <option value="software">Software Development</option>
+                                    <option value="import">Import & Export</option>
+                                    <option value="events">Event Management</option>
+                                    <option value="investment">Investment Consultancy</option>
+                                    <option value="partnership">Business Partnership</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section class="quick-contact-section bg-pattern">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Quick Contact Options</h2>
+                <p>Choose the best way to reach us based on your needs</p>
+            </div>
+
+            <div class="quick-contact-grid">
+                <div class="quick-contact-card reveal">
+                    <div class="quick-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>For Employers</h3>
+                    <p>Looking to hire skilled professionals? Our recruitment team specializes in connecting you with vetted talent across 15+ industries.</p>
+                    <a href="mailto:hr@connectglobe.info?subject=Employer Inquiry" class="btn btn-primary mt-2">
+                        <i class="fas fa-envelope"></i> Contact HR Team
+                    </a>
+                </div>
+
+                <div class="quick-contact-card reveal">
+                    <div class="quick-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>For Job Seekers</h3>
+                    <p>Searching for international career opportunities? Register with us to access verified job placements in the GCC region.</p>
+                    <a href="mailto:hr@connectglobe.info?subject=Job Application" class="btn btn-primary mt-2">
+                        <i class="fas fa-briefcase"></i> Apply Now
+                    </a>
+                </div>
+
+                <div class="quick-contact-card reveal">
+                    <div class="quick-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Business Partnerships</h3>
+                    <p>Interested in collaboration or investment opportunities? Let's discuss how we can create mutually beneficial partnerships.</p>
+                    <a href="mailto:hr@connectglobe.info?subject=Partnership Inquiry" class="btn btn-primary mt-2">
+                        <i class="fas fa-users"></i> Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section bg-gradient-blue">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Frequently Asked Questions</h2>
+                <p>Have questions? Check if we have already answered it below</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>How long does it take to receive consultancy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our initial consultancy response is typically provided <strong>within 24-48 hours</strong> of receiving your inquiry. For comprehensive recruitment consultancy, the full process includes:</p>
+                        <ul>
+                            <li><strong>Initial Assessment:</strong> 1-2 business days to review your requirements</li>
+                            <li><strong>Detailed Proposal:</strong> 3-5 business days for customized recruitment strategy</li>
+                            <li><strong>Candidate Matching:</strong> 1-2 weeks to identify and verify suitable candidates</li>
+                        </ul>
+                        <p>We prioritize urgent requests and can expedite the process for time-sensitive placements. Our MEA-approved status ensures streamlined documentation and compliance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>What documents do I have to provide?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>For Job Seekers:</strong></p>
+                        <ul>
+                            <li>Updated CV/Resume with detailed work experience</li>
+                            <li>Valid Passport (minimum 6 months validity)</li>
+                            <li>Educational Certificates & Transcripts</li>
+                            <li>Professional Certifications (if applicable)</li>
+                            <li>Experience Letters from previous employers</li>
+                            <li>Recent Passport-size Photographs</li>
+                            <li>Police Clearance Certificate</li>
+                            <li>Medical Fitness Certificate</li>
+                        </ul>
+                        <p><strong>For Employers:</strong></p>
+                        <ul>
+                            <li>Company Registration Documents</li>
+                            <li>Trade License & MEA Approvals</li>
+                            <li>Detailed Job Descriptions & Requirements</li>
+                            <li>Salary & Benefits Package Details</li>
+                        </ul>
+                        <p>All documents must be original or attested copies. We guide you through the entire documentation process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Are there any hidden terms and conditions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Absolutely not!</strong> Connect Globe operates with complete transparency as a MEA-approved consultancy. Here's our commitment:</p>
+                        <ul>
+                            <li><strong>Clear Fee Structure:</strong> All service charges are disclosed upfront with detailed breakdowns</li>
+                            <li><strong>Written Agreements:</strong> Every engagement includes a comprehensive service agreement outlining all terms</li>
+                            <li><strong>No Hidden Charges:</strong> We clearly specify what's included and what additional costs may apply (e.g., visa processing, medical tests)</li>
+                            <li><strong>Refund Policy:</strong> Our fair refund policy is clearly stated in the service agreement</li>
+                            <li><strong>Client Protection:</strong> All terms comply with MEA regulations and international recruitment standards</li>
+                        </ul>
+                        <p>We believe in building long-term relationships based on trust. Every client receives a detailed Terms of Service document before engagement, and our team is always available to clarify any questions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>What are the fees for overseas consultation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our fee structure is transparent and varies based on the service level you choose:</p>
+
+                        <p><strong>For Job Seekers:</strong></p>
+                        <ul>
+                            <li><strong>Registration Fee:</strong> Initial one-time fee for profile creation and verification</li>
+                            <li><strong>Service Fee:</strong> Charged only upon successful placement (job offer secured)</li>
+                            <li><strong>Documentation Support:</strong> Assistance with visa processing, attestation, and medical clearance (billed separately based on actual costs)</li>
+                        </ul>
+
+                        <p><strong>For Employers:</strong></p>
+                        <ul>
+                            <li><strong>Consultation Fee:</strong> Initial assessment and requirement analysis</li>
+                            <li><strong>Recruitment Fee:</strong> Percentage of annual salary or flat fee per successful placement</li>
+                            <li><strong>Volume Discounts:</strong> Special rates for bulk hiring (10+ positions)</li>
+                        </ul>
+
+                        <p><strong>Key Benefits:</strong></p>
+                        <ul>
+                            <li>No success, no fee policy for job seekers (main service fee only charged after placement)</li>
+                            <li>Flexible payment plans available</li>
+                            <li>All government fees (visa, medical, attestation) are pass-through costs with no markup</li>
+                            <li>Free initial consultation for employers</li>
+                        </ul>
+
+                        <p>Contact us for a personalized quote based on your specific requirements. We provide detailed cost breakdowns before you commit to any service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>How do you verify employers before placement?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Job seeker safety is our top priority. Our <strong>rigorous employer verification process</strong> includes:</p>
+                        <ul>
+                            <li><strong>Company Registration Verification:</strong> Validation of trade licenses, business permits, and legal status</li>
+                            <li><strong>MEA Compliance Check:</strong> Ensuring employer has necessary approvals for overseas recruitment</li>
+                            <li><strong>Background Research:</strong> Investigation of company reputation, financial stability, and track record</li>
+                            <li><strong>Site Visits:</strong> Physical verification of work locations and facilities (when possible)</li>
+                            <li><strong>Contract Review:</strong> Legal examination of employment contracts for fair terms and conditions</li>
+                            <li><strong>Past Placements Follow-up:</strong> Feedback from candidates previously placed with the employer</li>
+                            <li><strong>Compliance Audit:</strong> Verification of labor law compliance, working conditions, and salary payments</li>
+                        </ul>
+                        <p>We maintain a verified employer database and only work with companies that meet our strict safety and ethical standards. Your security and career success are non-negotiable.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>What industries do you specialize in?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Connect Globe has extensive expertise across <strong>15+ major industries</strong>:</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <ul>
+                                <li>Oil & Gas</li>
+                                <li>Construction & Infrastructure</li>
+                                <li>Petrochemical & Refining</li>
+                                <li>Shipbuilding & Marine</li>
+                                <li>Offshore Engineering</li>
+                                <li>Safety & Security</li>
+                                <li>Water Treatment</li>
+                                <li>Power & Energy</li>
+                            </ul>
+                            <ul>
+                                <li>Iron & Steel Manufacturing</li>
+                                <li>Hospitality & Tourism</li>
+                                <li>Automotive</li>
+                                <li>Healthcare & Medical</li>
+                                <li>Information Technology</li>
+                                <li>Mining & Minerals</li>
+                                <li>Manufacturing & Production</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top: 1rem;">Our recruiters have deep industry knowledge and maintain strong relationships with top employers in each sector. Whether you're seeking blue-collar, white-collar, or executive positions, we have the expertise to match your skills with the right opportunity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section bg-dark-gradient">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Find Us on the Map</h2>
+                <p>Visit our office in Coimbatore, India</p>
+            </div>
+
+            <div class="map-wrapper reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0897458658047!2d77.00644931479768!3d11.043693992150947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8578f1184e0a7%3A0x6f03dc3ea409da8d!2sSaravanampatti%2C%20Coimbatore%2C%20Tamil%20Nadu%20641035!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    width="100%"
+                    height="450"
+                    style="border:0; border-radius: 0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-overlay-info">
+                    <div class="map-info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Connect Globe Industrial Services</strong>
+                            <p>No: 7/474-B, Telecom Avenue, Saravanampatti<br>Coimbatore, TN, India - 641035</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section bg-pattern">
+        <div class="container text-center">
+            <div class="section-title reveal">
+                <h2>Connect on Social Media</h2>
+                <p>Follow us for the latest updates, job postings, and industry insights</p>
+            </div>
+
+            <div class="social-links-large reveal">
+                <a href="#" class="social-icon-large" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-icon-large" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="social-icon-large" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-icon-large" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/966533488004" class="social-icon-large" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Connect Globe</h3>
+                    <p>Leading provider of international recruitment and industrial services, connecting talent and opportunity across the Middle East and beyond.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#manpower">Manpower Consultancy</a></li>
+                        <li><a href="services.html#software">Software Development</a></li>
+                        <li><a href="services.html#import">Import & Export</a></li>
+                        <li><a href="services.html#events">Event Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Saravanampatti, Coimbatore, India</li>
+                        <li><i class="fas fa-phone"></i> +966-53348-8004</li>
+                        <li><i class="fas fa-phone"></i> +91-99940-45527</li>
+                        <li><i class="fas fa-envelope"></i> hr@connectglobe.info</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Connect Globe Industrial Services. All rights reserved. | Approved by MEA, Government of India</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="wow-effects.js"></script>
+    <script src="contact-effects.js"></script>
+</body>
+</html>
