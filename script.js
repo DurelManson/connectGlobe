@@ -1,11 +1,35 @@
 // ============================================
 // CONNECT GLOBE - JAVASCRIPT INTERACTIONS
 // ============================================
-// NOTE: Le menu mobile fonctionne maintenant avec CSS uniquement (CSS-only)
-// Pas besoin de JavaScript pour le menu toggle et le dropdown Services
+
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const nav = document.getElementById('nav');
+const hasDropdown = document.querySelector('.has-dropdown');
+
+if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('open');
+    });
+}
+
+// Mobile Dropdown Toggle
+if (hasDropdown) {
+    hasDropdown.addEventListener('click', (e) => {
+        if (window.innerWidth < 768) {
+            // Only prevent default on mobile when clicking the parent link
+            if (e.target.closest('a') && !e.target.closest('.dropdown')) {
+                e.preventDefault();
+                hasDropdown.classList.toggle('open');
+            }
+        }
+    });
+}
 
 // Header Scroll Effect
-const header = document.querySelector('header');
+const header = document.querySelector('.header');
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
@@ -40,7 +64,7 @@ window.addEventListener('load', revealOnScroll);
 
 // Active Navigation Link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-const navLinksAll = document.querySelectorAll('.nav-links a');
+const navLinksAll = document.querySelectorAll('.nav-list a');
 
 navLinksAll.forEach(link => {
     const href = link.getAttribute('href');

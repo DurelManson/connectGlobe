@@ -14,58 +14,75 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav class="container">
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <img src="images/connect globe logo v.png" alt="Connect Globe">
             </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
-            <input type="checkbox" id="services-toggle" class="services-toggle-checkbox" />
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li class="has-dropdown">
-                    <label for="services-toggle" class="services-link active">Services</label>
-                    <a href="services.html" class="services-link-desktop active">Services</a>
-                    <div class="services-dropdown">
-                        <a href="#manpower">
-                            <div class="dropdown-icon"><i class="fas fa-users"></i></div>
-                            <div class="dropdown-text">
-                                <h4>Manpower Consultancy</h4>
-                                <p>International recruitment solutions</p>
-                            </div>
-                        </a>
-                        <a href="#import-export">
-                            <div class="dropdown-icon"><i class="fas fa-shipping-fast"></i></div>
-                            <div class="dropdown-text">
-                                <h4>Industrial Import & Export</h4>
-                                <p>Global trade solutions</p>
-                            </div>
-                        </a>
-                        <a href="#digital">
-                            <div class="dropdown-icon"><i class="fas fa-laptop-code"></i></div>
-                            <div class="dropdown-text">
-                                <h4>Digital Marketing & Software</h4>
-                                <p>Custom digital solutions</p>
-                            </div>
-                        </a>
-                        <a href="#events">
-                            <div class="dropdown-icon"><i class="fas fa-calendar-alt"></i></div>
-                            <div class="dropdown-text">
-                                <h4>Event Management</h4>
-                                <p>Professional event solutions</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <label for="menu-toggle" class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        </nav>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html" class="active">Services <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <ul class="dropdown">
+                            <li>
+                                <a href="#manpower">
+                                    <div class="diamond-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="text">
+                                        <strong>Manpower Consultancy</strong>
+                                        <span>International recruitment solutions</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#import-export">
+                                    <div class="diamond-icon">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </div>
+                                    <div class="text">
+                                        <strong>Industrial Import & Export</strong>
+                                        <span>Global trade solutions</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#digital">
+                                    <div class="diamond-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div class="text">
+                                        <strong>Digital Marketing & Software</strong>
+                                        <span>Custom digital solutions</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#events">
+                                    <div class="diamond-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="text">
+                                        <strong>Event Management</strong>
+                                        <span>Professional event solutions</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Services Banner -->
