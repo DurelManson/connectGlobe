@@ -12,6 +12,11 @@ if (hamburger && nav) {
         const expanded = hamburger.getAttribute('aria-expanded') === 'true';
         hamburger.setAttribute('aria-expanded', !expanded);
         nav.classList.toggle('open');
+
+        // Fermer le dropdown Services quand on ferme le menu hamburger
+        if (!nav.classList.contains('open') && hasDropdown) {
+            hasDropdown.classList.remove('open');
+        }
     });
 }
 
@@ -27,6 +32,21 @@ if (hasDropdown) {
         }
     });
 }
+
+// Fermer le dropdown Services quand on clique sur d'autres liens du menu (mobile)
+const navLinks = document.querySelectorAll('.nav-list > li > a');
+
+navLinks.forEach(link => {
+    // Exclure le lien "Services" lui-même
+    if (!link.closest('.has-dropdown')) {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768 && hasDropdown) {
+                // Fermer le dropdown Services s'il est ouvert
+                hasDropdown.classList.remove('open');
+            }
+        });
+    }
+});
 
 // Header Scroll Effect
 const header = document.querySelector('.header');
