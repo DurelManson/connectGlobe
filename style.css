@@ -1025,6 +1025,12 @@ footer {
     min-width: 0;
   }
 
+  /* Prevent desktop hover effect from shifting the dropdown in mobile */
+  .has-dropdown:hover .dropdown {
+    transform: none;
+    margin-top: 0;
+  }
+
   .has-dropdown.open .dropdown {
     max-height: 600px;
     margin-top: 1rem;
@@ -1164,6 +1170,11 @@ footer {
 
   .footer-section:first-child h3 {
     margin-top: 0;
+  }
+  /* Mobile specific padding override */
+  .nav-list > li > a {
+    padding: 1rem 0;
+    font-size: 1rem;
   }
 }
 
@@ -1343,18 +1354,14 @@ h6 {
   font-size: 1rem;
 }
  
+  /* Nav Overlay */
 .nav-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 998;
 }
+
 body.menu-open {
   overflow: hidden;
-}
-@media (max-width: 768px) {
-  .nav-list > li > a {
-    padding: 1rem 0;
-    font-size: 1rem;
-  }
 }
