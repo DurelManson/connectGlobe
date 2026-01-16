@@ -20,13 +20,13 @@
 }
 
 .banner-content h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     margin-bottom: 1.5rem;
     text-shadow: 0 0 20px rgba(0, 147, 208, 0.5);
 }
 
 .banner-content p {
-    font-size: 1.3rem;
+    font-size: clamp(1.05rem, 1.2vw, 1.3rem);
     opacity: 0.95;
     line-height: 1.8;
 }
@@ -195,7 +195,7 @@
 }
 
 .business-grow-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 2.4vw, 2.5rem);
     color: var(--text-primary);
     margin-bottom: 2rem;
     line-height: 1.3;
@@ -283,7 +283,7 @@
 }
 
 .who-we-are-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 2.4vw, 2.5rem);
     color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
@@ -426,7 +426,7 @@
 }
 
 .final-cta-content h2 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 3vw, 3rem);
     margin-bottom: 1.5rem;
     color: var(--white);
     text-shadow: 0 0 20px rgba(0, 147, 208, 0.5);
@@ -469,10 +469,6 @@
 
 /* Responsive Design */
 @media (max-width: 968px) {
-    .banner-content h1 {
-        font-size: 2.5rem;
-    }
-
     .mission-vision-grid {
         grid-template-columns: 1fr;
     }
@@ -503,26 +499,9 @@
         gap: 1rem;
     }
 
-    .final-cta-content h2 {
-        font-size: 2.2rem;
-    }
 }
 
 @media (max-width: 768px) {
-    .banner-content h1 {
-        font-size: 2rem;
-    }
-
-    .banner-content p {
-        font-size: 1.1rem;
-    }
-
-    .mv-content h3,
-    .business-grow-content h2,
-    .who-we-are-content h2 {
-        font-size: 1.8rem;
-    }
-
     .mv-image {
         height: 200px;
     }
@@ -531,7 +510,29 @@
         padding: 2rem 1rem;
     }
 
-    .final-cta-content h2 {
-        font-size: 1.8rem;
+    .image-decorative-corner.decorative-top-right {
+        top: -6px;
+        right: -6px;
+    }
+
+    .image-decorative-corner.decorative-bottom-left {
+        bottom: -6px;
+        left: -6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-decorative-corner {
+        display: none;
+    }
+    .banner-content h1 {
+        font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    .mv-content h3 {
+        font-size: clamp(1.3rem, 4vw, 1.7rem);
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
     }
 }

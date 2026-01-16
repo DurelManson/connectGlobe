@@ -21,30 +21,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Initialize typing effect on hero
-document.addEventListener('DOMContentLoaded', () => {
-    const heroHeading = document.getElementById('typed-heading');
-    const aboutHeading = document.getElementById('typed-about-heading');
-    const contactHeading = document.getElementById('typed-contact-heading');
-    
-    if (heroHeading) {
-        setTimeout(() => {
-            typeWriter(heroHeading, 'Connecting Industrial Excellence', 80);
-        }, 500);
-    }
-    
-    if (aboutHeading) {
-        setTimeout(() => {
-            typeWriter(aboutHeading, 'About Connect Globe', 80);
-        }, 500);
-    }
-    
-    if (contactHeading) {
-        setTimeout(() => {
-            typeWriter(contactHeading, 'Contact Connect Globe', 80);
-        }, 500);
-    }
-});
+ 
 
 // ===== PARTICLES EFFECT =====
 function createParticles() {
@@ -327,8 +304,7 @@ function createCursorTrail() {
     animateTrail();
 }
 
-// Initialize cursor trail
-document.addEventListener('DOMContentLoaded', createCursorTrail);
+ 
 
 // ===== SMOOTH SCROLL WITH EASING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -441,25 +417,24 @@ function interactiveBackground() {
     });
 }
 
-// Initialize interactive background
-document.addEventListener('DOMContentLoaded', interactiveBackground);
+ 
 
 // ===== HEADER HIDE/SHOW ON SCROLL =====
-let lastScroll = 0;
-const header = document.querySelector('header');
+let wowLastScroll = 0;
+const wowHeader = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > lastScroll && currentScroll > 100) {
+    if (currentScroll > wowLastScroll && currentScroll > 100) {
         // Scrolling down
-        header.style.transform = 'translateY(-100%)';
+        wowHeader.style.transform = 'translateY(-100%)';
     } else {
         // Scrolling up
-        header.style.transform = 'translateY(0)';
+        wowHeader.style.transform = 'translateY(0)';
     }
 
-    lastScroll = currentScroll;
+    wowLastScroll = currentScroll;
 });
 
 // ===== IMAGE PARALLAX EFFECT =====

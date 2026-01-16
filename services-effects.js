@@ -2,15 +2,7 @@
    SERVICES PAGE - WOW EFFECTS
    ============================================ */
 
-// ===== TYPING EFFECT FOR SERVICES BANNER =====
-document.addEventListener('DOMContentLoaded', () => {
-    const servicesHeading = document.getElementById('typed-services-heading');
-    if (servicesHeading) {
-        setTimeout(() => {
-            typeWriter(servicesHeading, 'Our Services', 80);
-        }, 500);
-    }
-});
+ 
 
 // ===== SERVICE IMAGES ZOOM ON SCROLL =====
 function animateServiceImages() {

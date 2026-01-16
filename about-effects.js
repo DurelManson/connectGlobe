@@ -2,15 +2,7 @@
    ABOUT US PAGE - WOW EFFECTS
    ============================================ */
 
-// ===== TYPING EFFECT FOR ABOUT BANNER =====
-document.addEventListener('DOMContentLoaded', () => {
-    const aboutHeading = document.getElementById('typed-about-heading');
-    if (aboutHeading) {
-        setTimeout(() => {
-            typeWriter(aboutHeading, 'About Connect Globe', 80);
-        }, 500);
-    }
-});
+ 
 
 // ===== MISSION/VISION CARD STAGGER ANIMATION =====
 function animateMissionVisionCards() {

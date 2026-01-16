@@ -12,6 +12,23 @@ if (hamburger && nav) {
         const expanded = hamburger.getAttribute('aria-expanded') === 'true';
         hamburger.setAttribute('aria-expanded', !expanded);
         nav.classList.toggle('open');
+        if (nav.classList.contains('open')) {
+            document.body.classList.add('menu-open');
+            let overlay = document.querySelector('.nav-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'nav-overlay';
+                document.body.appendChild(overlay);
+                overlay.addEventListener('click', () => {
+                    closeMenu();
+                });
+            }
+            const firstLink = nav.querySelector('.nav-list a');
+            if (firstLink) firstLink.focus();
+            enableFocusTrap();
+        } else {
+            closeMenu(true);
+        }
 
         // Fermer le dropdown Services quand on ferme le menu hamburger
         if (!nav.classList.contains('open') && hasDropdown) {
@@ -20,14 +37,81 @@ if (hamburger && nav) {
     });
 }
 
+function closeMenu(skipRemoveDropdown) {
+    nav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+    document.body.classList.remove('menu-open');
+    const overlay = document.querySelector('.nav-overlay');
+    if (overlay) overlay.remove();
+    if (!skipRemoveDropdown && hasDropdown) {
+        hasDropdown.classList.remove('open');
+    }
+    disableFocusTrap();
+}
+
+function getFocusableInNav() {
+    return nav.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])');
+}
+
+let focusTrapHandler = null;
+function enableFocusTrap() {
+    disableFocusTrap();
+    focusTrapHandler = (e) => {
+        if (!nav.classList.contains('open')) return;
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            closeMenu();
+            return;
+        }
+        if (e.key !== 'Tab') return;
+        const nodes = Array.from(getFocusableInNav());
+        if (nodes.length === 0) return;
+        const first = nodes[0];
+        const last = nodes[nodes.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    };
+    document.addEventListener('keydown', focusTrapHandler, true);
+}
+
+function disableFocusTrap() {
+    if (focusTrapHandler) {
+        document.removeEventListener('keydown', focusTrapHandler, true);
+        focusTrapHandler = null;
+    }
+}
+
 // Mobile Dropdown Toggle
 if (hasDropdown) {
+    const dropdown = hasDropdown.querySelector('.dropdown');
+    const servicesTrigger = hasDropdown.querySelector('a');
+    if (dropdown && !dropdown.id) dropdown.id = 'services-dropdown';
+    if (servicesTrigger) {
+        servicesTrigger.setAttribute('aria-haspopup', 'true');
+        servicesTrigger.setAttribute('aria-controls', dropdown ? dropdown.id : '');
+        servicesTrigger.setAttribute('aria-expanded', 'false');
+        servicesTrigger.addEventListener('keydown', (e) => {
+            if (window.innerWidth < 768 && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault();
+                hasDropdown.classList.toggle('open');
+                servicesTrigger.setAttribute('aria-expanded', hasDropdown.classList.contains('open'));
+            }
+        });
+    }
     hasDropdown.addEventListener('click', (e) => {
         if (window.innerWidth < 768) {
             // Only prevent default on mobile when clicking the parent link
             if (e.target.closest('a') && !e.target.closest('.dropdown')) {
                 e.preventDefault();
                 hasDropdown.classList.toggle('open');
+                if (servicesTrigger) {
+                    servicesTrigger.setAttribute('aria-expanded', hasDropdown.classList.contains('open'));
+                }
             }
         }
     });

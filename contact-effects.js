@@ -2,15 +2,7 @@
    CONTACT PAGE - WOW EFFECTS
    ============================================ */
 
-// ===== TYPING EFFECT FOR CONTACT BANNER =====
-document.addEventListener('DOMContentLoaded', () => {
-    const contactHeading = document.getElementById('typed-contact-heading');
-    if (contactHeading) {
-        setTimeout(() => {
-            typeWriter(contactHeading, 'Get In Touch With Us', 80);
-        }, 500);
-    }
-});
+ 
 
 // ===== CONTACT INFO CARDS STAGGER ANIMATION =====
 function animateContactInfoCards() {

@@ -13,7 +13,7 @@
 }
 
 .services-banner .banner-content h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     text-shadow: 0 0 20px rgba(0, 147, 208, 0.5);
 }
 
@@ -127,7 +127,7 @@
 }
 
 .service-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 2.4vw, 2.5rem);
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
@@ -461,7 +461,7 @@
 }
 
 .cta-content h2 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 3vw, 3rem);
     margin-bottom: 1.5rem;
     color: var(--text-primary);
 }
@@ -537,20 +537,8 @@
 }
 
 @media (max-width: 768px) {
-    .services-banner .banner-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .service-content h2 {
-        font-size: 2rem;
-    }
-
     .cta-content {
         padding: 2rem 1rem;
-    }
-
-    .cta-content h2 {
-        font-size: 2rem;
     }
 
     /* Vertical Timeline Mobile */
@@ -604,5 +592,18 @@
 
     .step-content p {
         font-size: 0.95rem;
+    }
+
+    .image-decorative-frame {
+        top: -10px;
+        left: -10px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-decorative-frame {
+        display: none;
     }
 }
